@@ -1,0 +1,1121 @@
+/* 1. Universal Reset (Isse white space khatam hoga) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at top center, #1a1a1a 0%, #000000 100%) !important;
+    background-color: #000 !important; /* Fallback */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Fixed Glass Navigation */
+.glass-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(0, 0, 0, 0.8); /* Dark glass look */
+    backdrop-filter: blur(15px);
+    position: fixed;
+    top: 0;   /* Bilkul uper chipka dega */
+    left: 0;  /* Left se gap khatam */
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo { font-size: 24px; font-weight: 800; color: #fff; letter-spacing: 2px; }
+.logo span { color: #ff9f00; }
+
+/* Hero Section with Poster */
+.hero {
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+@media screen and (max-width: 480px) {
+    /* पूरे हीरो सेक्शन की फालतू हाइट खत्म करें */
+    .hero, section#hero {
+        height: auto !important;
+        min-height: auto !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* सर्च बार के नीचे का काला हिस्सा सिकोड़ें */
+    .search-overlay {
+        height: auto !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+.brand-poster {
+    width: 100% !important;
+    height: auto !important; /* इमेज को पिचकने से बचाने के लिए */
+    margin-top: 70px !important; /* इसे डालने से इमेज नेविगेशन बार के नीचे आ जाएगी */
+    display: block !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7; /* Text dikhne ke liye thoda dark */
+    object-fit: contain !important; /* इमेज पूरी दिखेगी, कटेगी नहीं */
+    object-position: top !important;
+}
+
+
+.search-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+}
+
+.search-overlay h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* MEGA SEARCH BAR */
+.mega-search {
+    background: white;
+    padding: 10px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mega-search input {
+    border: none;
+    padding: 15px;
+    flex: 1;
+    font-size: 18px;
+    outline: none;
+    border-radius: 50px;
+}
+
+.mega-search i { margin-left: 20px; color: #777; }
+
+.mega-search button {
+    background: #ff9f00;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.mega-search button:hover { background: #e68a00; }
+
+/* Poster Grid Layout */
+.poster-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    padding: 20px;
+    background: #121212;
+}
+
+.grid-item {
+    position: relative;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.grid-item:hover img { transform: scale(1.1); }
+
+.info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+}
+.logo {
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 159, 0, 0.5); /* Orange Glow */
+    transition: 0.3s;
+}
+
+.logo:hover {
+    text-shadow: 0 0 20px #ff9f00; /* Hover karne par zyada chamak */
+}
+.mega-search {
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+}
+
+.mega-search:focus-within {
+    border-color: #ff9f00;
+    transform: scale(1.02); /* Thoda bada dikhega */
+    box-shadow: 0 0 25px rgba(255, 159, 0, 0.4);
+}
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    animation: bounce 2s infinite;
+}
+
+@media screen and (max-width: 480px) {
+    /* 1. पोस्टर ग्रिड को एक के नीचे एक करो और गैप बढ़ाओ */
+    .poster-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important; /* इमेजेस के बीच साफ़ गैप */
+        padding: 15px !important;
+    }
+
+    /* 2. हर डिब्बे की हाइट फिक्स करो ताकि कंटेंट न घुसे */
+    .grid-item {
+        position: relative !important;
+        width: 100% !important;
+        height: 350px !important; /* हाइट बढ़ा दी ताकि इमेज साफ़ दिखे */
+        border-radius: 15px !important;
+        overflow: hidden !important;
+    }
+
+    /* 3. इमेज को पूरा और साफ़ दिखाओ */
+    .grid-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; /* इमेज को खींचने से बचाएगा */
+        object-position: center !important;
+    }
+
+    /* 4. 'Explore' और टेक्स्ट को इमेज के नीचे से हटाकर सही जगह सेट करो */
+    .info {
+        position: absolute !important;
+        bottom: 15px !important;
+        left: 15px !important;
+        background: rgba(0, 0, 0, 0.6) !important; /* हल्का सा काला साया ताकि टेक्स्ट दिखे */
+        padding: 10px !important;
+        border-radius: 8px !important;
+        width: calc(100% - 30px) !important;
+    }
+
+    .info h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 5px !important;
+        color: white !important;
+    }
+
+    .info button {
+        padding: 8px 15px !important;
+        font-size: 0.9rem !important;
+    }
+}
+.welcome-toast {
+    position: fixed;
+    bottom: 30px;
+    right: -400px; /* Shuru mein screen se bahar */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 159, 0, 0.3);
+    padding: 15px 25px;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 2000;
+}
+
+.welcome-toast.show {
+    right: 30px; /* Slide hokar andar aayega */
+}
+
+.toast-content i {
+    font-size: 24px;
+    color: #ff9f00;
+}
+
+.user-name { font-weight: bold; display: block; font-size: 18px; }
+.welcome-toast button { background: none; border: none; color: white; cursor: pointer; font-size: 20px; }
+/* Section Styling */
+.trending-section {
+    padding: 80px 5%;
+    background: #000;
+    text-align: center;
+}
+
+.section-title {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.section-title span { color: #ff9f00; }
+
+/* 3D Grid Layout */
+.poster-3d-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    perspective: 1000px; /* 3D ke liye zaroori hai */
+}
+
+/* The Magic 3D Card */
+.poster-card {
+    height: 450px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.poster-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    transition: all 0.5s ease;
+}
+
+.poster-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hover Effect: Card tilts toward the user */
+.poster-card:hover {
+    transform: rotateY(15deg) rotateX(5deg) scale(1.05);
+}
+
+.poster-card:hover .poster-content {
+    box-shadow: -10px 20px 40px rgba(255, 159, 0, 0.3);
+}
+
+/* Text Overlay on Posters */
+.poster-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    color: white;
+    text-align: left;
+    transform: translateZ(50px); /* Text ko thoda bahar nikalta hai */
+}
+/* Deals Styling */
+.deals-section {
+    padding: 50px 5%;
+    background: #111;
+    text-align: center;
+}
+/* 1. कंटेनर जो गोलों को लाइन में रखेगा */
+.deals-container {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+    padding: 20px 10px;
+}
+
+/* 2. गोले का बाहरी डब्बा */
+.deal-item img {
+    width: 90% !important;  /* इमेज को गोले से थोड़ा छोटा रखा ताकि किनारों से न चिपके */
+    height: 90% !important;
+    object-fit: contain !important; /* यह इमेज को बिना काटे पूरा अंदर फिट कर देगा */
+    object-position: center !important; 
+    border-radius: 50% !important;
+    display: block !important;
+    margin: auto !important; /* इमेज को बिल्कुल बीच में रखने के लिए */
+}
+
+.deal-item {
+    width: 100px !important; 
+    height: 100px !important;
+    border-radius: 50% !important;
+    border: 2px solid #ff9f00 !important;
+    background-color: #ffffff !important; /* पीछे सफ़ेद बैकग्राउंड ताकि इमेज साफ़ दिखे */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+}
+/* 4. मोबाइल के लिए खास सेटिंग (ताकि फैशन से न टकराए) */
+@media screen and (max-width: 480px) {
+    .deal-item {
+        width: 75px !important; /* मोबाइल पर गोले थोड़े छोटे */
+        height: 75px !important;
+    }
+    
+    .deals-container {
+        gap: 10px !important;
+        justify-content: space-evenly !important;
+    }
+}
+.deal-item:hover { transform: scale(1.1); box-shadow: 0 0 20px #ff9f00; }
+.deal-item p { color: black; font-weight: bold; margin-top: 10px; font-size: 14px; }
+@media screen and (max-width: 480px) {
+    /* 1. कंटेनर को सेट करें ताकि गोले एक लाइन में रहें और कटे नहीं */
+    .deals-container {
+        display: flex !important;
+        flex-wrap: nowrap !important; /* गोलों को नीचे गिरने से रोकेगा */
+        overflow-x: auto !important; /* अगर ज्यादा गोले हैं तो यूजर साइड में स्क्रॉल कर पाएगा */
+        gap: 12px !important;
+        padding: 10px !important;
+        justify-content: flex-start !important; /* मोबाइल पर बाएँ से शुरू करना बेहतर है */
+        -webkit-overflow-scrolling: touch; /* स्मूथ स्क्रॉलिंग के लिए */
+    }
+
+    /* 2. मोबाइल पर गोलों का साइज थोड़ा छोटा करें */
+    .deal-item {
+        flex: 0 0 70px !important; /* साइज को 70px पर लॉक कर दिया */
+        height: 70px !important;
+        width: 70px !important;
+        min-width: 70px !important;
+        border-width: 1.5px !important;
+    }
+
+    /* 3. इमेज को मोबाइल पर फिट करें */
+    .deal-item img {
+        width: 85% !important; 
+        height: 85% !important;
+        object-fit: contain !important; /* इमेज कटेगी नहीं, पूरी दिखेगी */
+        transform: scale(1) !important; /* मोबाइल पर ज़ूम हटा दें */
+        margin: auto !important;
+    }
+}
+
+/* Trust Bar */
+.trust-bar {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 10%;
+    background: #ff9f00; /* Orange bar */
+    color: black;
+    font-weight: bold;
+}
+.badge { font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+
+/* Footer */
+.main-footer {
+    background: #000;
+    color: white;
+    padding: 60px 5% 20px;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+.footer-content h3 span { color: #ff9f00; }
+.socials { margin: 20px 0; font-size: 24px; }
+.socials a { color: white; margin: 0 15px; transition: 0.3s; }
+.socials a:hover { color: #ff9f00; }
+.footer-bottom { margin-top: 40px; font-size: 12px; color: #777; }
+/* Instagram Gallery Styling */
+.insta-gallery {
+    padding: 60px 5%;
+    background: #000;
+    text-align: center;
+}
+
+/* 1. कंटेनर को स्टैक बनाने के लिए तैयार करना */
+.insta-grid {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 400px !important; /* मोबाइल और डेस्कटॉप दोनों के लिए जगह */
+    margin-top: 50px !important;
+}
+
+/* 2. हर आइटम को एक ही जगह पर चिपकाना (Absolute Position) */
+.insta-item {
+    position: absolute !important;
+    width: 220px !important; /* ताश के पत्ते जैसा साइज */
+    height: 300px !important;
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border: 2px solid #ff9f00;
+    background: #000;
+}
+
+/* 3. पत्तों को थोड़ा बिखेरना (Default Look) */
+.insta-item:nth-child(1) { transform: rotate(-8deg) translateX(-10px); z-index: 4; }
+.insta-item:nth-child(2) { transform: rotate(-3deg) translateX(0); z-index: 3; }
+.insta-item:nth-child(3) { transform: rotate(4deg) translateX(10px); z-index: 2; }
+.insta-item:nth-child(4) { transform: rotate(9deg) translateX(20px); z-index: 1; }
+
+/* 4. असली धमाका: फैलने की दूरी बढ़ा दी ताकि पूरी इमेज दिखे */
+.insta-grid:hover .insta-item:nth-child(1),
+.insta-grid:active .insta-item:nth-child(1) { 
+    transform: translateX(-240px) rotate(-15deg) scale(1.05) !important; 
+    z-index: 10 !important;
+}
+
+.insta-grid:hover .insta-item:nth-child(2),
+.insta-grid:active .insta-item:nth-child(2) { 
+    transform: translateX(-80px) rotate(-5deg) scale(1.05) !important; 
+    z-index: 11 !important;
+}
+
+.insta-grid:hover .insta-item:nth-child(3),
+.insta-grid:active .insta-item:nth-child(3) { 
+    transform: translateX(80px) rotate(5deg) scale(1.05) !important; 
+    z-index: 12 !important;
+}
+
+.insta-grid:hover .insta-item:nth-child(4),
+.insta-grid:active .insta-item:nth-child(4) { 
+    transform: translateX(240px) rotate(15deg) scale(1.05) !important; 
+    z-index: 13 !important;
+}
+
+/* एक एक्स्ट्रा ट्रिक: जिस कार्ड पर माउस हो, वो सबसे ऊपर आ जाए */
+.insta-item:hover {
+    z-index: 100 !important;
+    transform: scale(1.15) translateY(-20px) !important; /* थोड़ा बड़ा और ऊपर भी उठेगा */
+    border: 3px solid #fff !important; /* सफ़ेद बॉर्डर से चमकेगा */
+}
+@media screen and (max-width: 480px) {
+    /* 1. गैलरी के डब्बे की हाइट फोन के हिसाब से */
+    .insta-grid {
+        height: 350px !important;
+        margin-top: 30px !important;
+    }
+
+    /* 2. कार्ड्स का साइज फोन के लिए छोटा किया */
+    .insta-item {
+        width: 150px !important; /* साइज कम किया ताकि 4 कार्ड्स समा सकें */
+        height: 220px !important;
+    }
+
+    /* 3. कार्ड्स के खुलने की दूरी (TranslateX) कम की ताकि स्क्रीन से बाहर न जाएं */
+    .insta-grid:hover .insta-item:nth-child(1),
+    .insta-grid:active .insta-item:nth-child(1) { 
+        transform: translateX(-100px) rotate(-10deg) scale(1.05) !important; 
+    }
+
+    .insta-grid:hover .insta-item:nth-child(2),
+    .insta-grid:active .insta-item:nth-child(2) { 
+        transform: translateX(-35px) rotate(-4deg) scale(1.05) !important; 
+    }
+
+    .insta-grid:hover .insta-item:nth-child(3),
+    .insta-grid:active .insta-item:nth-child(3) { 
+        transform: translateX(35px) rotate(4deg) scale(1.05) !important; 
+    }
+
+    .insta-grid:hover .insta-item:nth-child(4),
+    .insta-grid:active .insta-item:nth-child(4) { 
+        transform: translateX(100px) rotate(10deg) scale(1.05) !important; 
+    }
+
+    /* 4. टच करने पर जो कार्ड ऊपर आए वो ज्यादा बड़ा न हो वरना स्क्रीन भर जाएगी */
+    .insta-item:active, .insta-item:hover {
+        z-index: 100 !important;
+        transform: scale(1.1) translateY(-10px) !important;
+    }
+}
+
+/* 5. इमेज को फिट रखना */
+.insta-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+
+@media screen and (max-width: 480px) {
+    .insta-grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* मोबाइल पर 2x2 का ग्रिड */
+        gap: 8px;
+    }
+}
+
+/* Parallax Section Styling */
+.parallax-section {
+    height: 400px;
+    background-image: url('https://i.postimg.cc/YC8DyHQb/Whats-App-Image-2026-05-08-at-6-58-41-AM.jpg'); /* Yahan ek mast photo lagao */
+    background-attachment: fixed; /* Ye parallax magic hai */
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.parallax-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.cta-btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #ff9f00;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: white;
+    color: #ff9f00;
+    box-shadow: 0 0 15px #ff9f00;
+}
+/* Hamburger Icon */
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 2001;
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Sidebar Styling (Hidden by default) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Screen se bahar */
+    width: 280px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 80px 30px;
+    transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar.active {
+    left: 0; /* Click karne par andar aayega */
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover { color: #ff9f00; transform: translateX(10px); }
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.mission-section { padding: 100px 5%; display: flex; justify-content: center; }
+
+.glow-card {
+    background: #111;
+    padding: 60px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(255, 159, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Ye card ke peeche ek ghumti hui roshni banayega */
+.glow-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(#ff9f00, transparent, transparent, #ff9f00);
+    animation: rotate 4s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotate { 100% { transform: rotate(360deg); } }
+
+.glow-card::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: #000;
+    border-radius: 16px;
+    z-index: -1;
+}
+
+.neon-btn {
+    margin-top: 30px;
+    background: none;
+    border: 2px solid #ff9f00;
+    color: #ff9f00;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+    text-transform: uppercase;
+}
+
+.neon-btn:hover {
+    background: #ff9f00;
+    color: black;
+    box-shadow: 0 0 30px #ff9f00;
+}
+/* new code ka  */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 10px;
+}
+.google-login-btn {
+    width: 100%;
+    height: 42px;
+    background-color: #ffffff;
+    border-radius: 4px; /* Google's standard curve */
+    border: 1px solid #dadce0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 1px;
+    transition: box-shadow .2s;
+    overflow: hidden;
+}
+
+.google-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.google-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.btn-text {
+    color: #3c4043;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 24px;
+    text-align: left;
+}
+
+.google-login-btn:hover {
+    box-shadow: 0 1px 3px 0 rgba(60,64,67,0.30), 0 4px 8px 3px rgba(60,64,67,0.15);
+    background-color: #f8f9fa;
+}
+
+.google-login-btn:active {
+    background-color: #eeeeee;
+}
+@media screen and (max-width: 480px) {
+    /* 1. हेडर को साफ़ करें और 'Fashion/Electronics' को वापस लाएं */
+    .right-section {
+        display: flex !important; /* वापस दिखाओ */
+        gap: 8px !important;
+        align-items: center;
+    }
+
+    .nav-link {
+        font-size: 10px !important; /* साइज छोटा ताकि फिट आ जाए */
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    /* 2. सर्च बार और बटन का सही साइज और पोजीशन */
+    .mega-search {
+        width: 90% !important;
+        height: 35px !important;
+        margin: 10px auto !important;
+        display: flex !important;
+        border-radius: 20px !important;
+        overflow: hidden;
+    }
+
+    #search-input {
+        font-size: 11px !important;
+        padding-left: 12px !important;
+    }
+
+    #search-btn {
+        width: 60px !important;
+        font-size: 10px !important;
+        background: #ff9800 !important; /* ऑरेंज बटन जैसा स्क्रीनशॉट में है */
+    }
+
+    /* 3. बर्गर मेनू और लोगो का तालमेल */
+    .menu-icon {
+        font-size: 18px !important;
+        margin-right: 5px;
+    }
+
+    .logo {
+        font-size: 15px !important;
+        letter-spacing: 1px;
+    }
+
+    /* 4. 'Find Your Style' टेक्स्ट को छोटा और तमीज में लाएं */
+    .search-overlay h1 {
+        font-size: 20px !important;
+        margin-bottom: 5px !important;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 480px) {
+    /* 1. पीले बॉक्स (Trust Bar) का फिक्स */
+    .trust-bar {
+        display: flex !important;
+        justify-content: space-around !important; /* बराबर दूरी के लिए */
+        padding: 10px 2px !important;
+        gap: 15px !important; /* आइटम्स के बीच गैप */
+    }
+
+    .badge {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px; /* आइकॉन और टेक्स्ट के बीच गैप */
+    }
+
+    .badge span {
+        font-size: 8px !important; /* फॉन्ट छोटा किया */
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        text-align: center;
+    }
+
+    .badge i {
+        font-size: 14px !important; /* आइकॉन थोड़ा छोटा */
+    }
+
+    /* 2. सर्च बार और बटन का फिक्स */
+    .mega-search {
+        display: flex !important; /* बटन दिखाने के लिए फ्लेक्स जरूरी है */
+        width: 92% !important;
+        height: 40px !important;
+        background: #fff;
+        border-radius: 25px !important;
+        margin: 10px auto !important;
+        overflow: hidden !important; /* ताकि बटन बाहर न निकले */
+        border: 1px solid #ccc;
+    }
+
+    #search-input {
+        flex: 1; /* इनपुट पूरी जगह लेगा */
+        border: none !important;
+        outline: none !important;
+        padding-left: 15px !important;
+        font-size: 11px !important; /* प्लेसहोल्डर का साइज छोटा किया */
+    }
+
+    /* प्लेसहोल्डर का कलर और स्टाइल */
+    #search-input::placeholder {
+        font-size: 10px !important;
+        color: #888;
+    }
+
+    /* सर्च बटन को वापस लाना */
+    #search-btn {
+        display: block !important; /* गायब था तो अब दिखेगा */
+        width: 70px !important;
+        height: 100% !important;
+        background: #ff9800 !important; /* चमकता ऑरेंज */
+        color: white !important;
+        border: none !important;
+        font-size: 11px !important;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+/* शुरुआत में चीजें छुपी रहेंगी */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* जब स्क्रॉल होकर सामने आएंगी तब यह क्लास लगेगी */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* प्रिंस भाई, ये कोड सीधा कॉपी करके सबसे नीचे डालो */
+.insta-item {
+    cursor: pointer !important;
+    overflow: visible !important; /* ज़ूम को बाहर आने देगा */
+}
+
+.insta-item img {
+    transition: transform 0.4s ease !important;
+}
+
+.insta-item:hover img {
+    transform: scale(1.15) !important; /* थोड़ा ज़्यादा ज़ूम ताकि साफ़ दिखे */
+    filter: brightness(1.1) !important; /* थोड़ा चमक भी जाए */
+}
+/* ब्रांड और फ्लिपकार्ट का कनेक्शन दिखाने के लिए */
+.brand-identity {
+    background: #2874f0; /* Flipkart का Blue कलर */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-top: 3px solid #ff9f00; /* Prinxo का Orange कलर */
+}
+
+.brand-identity span {
+    color: #ffcf00; /* Flipkart का Yellow कलर */
+}
+.about-section {
+    background-color: #000; /* Pure Black for luxury feel */
+    color: #ffffff;
+    padding: 100px 20px;
+    text-align: center;
+    border-top: 1px solid #333;
+    letter-spacing: 0.5px;
+}
+
+.about-container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.brand-tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: #ff9f00;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.classic-title {
+    font-size: 2.8rem;
+    font-weight: 300; /* Thin font for elegance */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif; /* Or any serif font you have */
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #a0a0a0;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.partnership-box {
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    padding: 20px 0;
+    margin: 40px 0;
+}
+
+.partnership-box p {
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.signature-line {
+    font-size: 1rem;
+    color: #888;
+    margin-top: 20px;
+}
+
+.signature-line span {
+    color: #fff;
+    font-weight: 500;
+    margin-left: 5px;
+    border-bottom: 1px solid #ff9f00;
+    padding-bottom: 2px;
+}
+
+/* Responsive adjustment */
+@media screen and (max-width: 480px) {
+    .classic-title { font-size: 1.8rem; }
+    .about-text { font-size: 1rem; }
+    .about-section { padding: 60px 20px; }
+}
+/* Nav Bar Logo */
+.main-logo {
+    height: 40px; /* अपनी पसंद के हिसाब से एडजस्ट करें */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.main-logo:hover {
+    transform: scale(1.1);
+}
+
+/* About Section Logo */
+.about-logo {
+    width: 80px; /* छोटा और सोबर */
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* अगर लोगो काला है तो उसे सफ़ेद करने के लिए (Dark Mode के लिए) */
+    opacity: 0.9;
+}
+
+/* मोबाइल के लिए लोगो साइज */
+@media screen and (max-width: 480px) {
+    .main-logo {
+        height: 30px;
+    }
+}
+/* पूरे कंटेनर को सेट करें */
+.logo-container {
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important; /* इससे नीला रंग और अंडरलाइन हट जाएगी */
+    gap: 10px !important;
+}
+
+/* लोगो को गोल और सही साइज में रखें */
+.main-logo {
+    height: 40px !important;
+    width: 40px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 1.5px solid #ff9f00; /* प्रीमियम टच */
+}
+
+/* नाम को प्रीमियम कलर दें */
+.brand-text {
+    color: #ffffff !important; /* शुद्ध सफेद */
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    line-height: 1 !important;
+}
+
+/* ZEXINE को गोल्ड/ऑरेंज कलर दें */
+.brand-text span {
+    color: #ff9f00 !important;
+}
+
+/* मोबाइल के लिए बारीक एडजस्टमेंट */
+@media screen and (max-width: 480px) {
+    .brand-text {
+        font-size: 0.9rem !important;
+        letter-spacing: 1px !important;
+    }
+    .main-logo {
+        height: 32px !important;
+        width: 32px !important;
+    }
+}
+@media screen and (max-width: 480px) {
+    /* 1. नाम का साइज छोटा करें ताकि वह 'Fashion' से न चिपके */
+    .brand-text {
+        font-size: 0.8rem !important; /* साइज कम किया */
+        letter-spacing: 0.5px !important; /* अक्षरों के बीच की जगह कम की */
+        display: flex;
+        flex-direction: column; /* नाम को ऊपर-नीचे करने के लिए ताकि चौड़ाई कम घेरे */
+        line-height: 1.1 !important;
+    }
+
+    /* 2. लोगो इमेज को थोड़ा और छोटा करें */
+    .main-logo {
+        height: 28px !important;
+        width: 28px !important;
+    }
+
+    /* 3. पूरे कंटेनर का मार्जिन सेट करें */
+    .logo-container {
+        gap: 6px !important;
+        margin-right: 10px !important; /* 'Fashion' से दूरी बनाने के लिए */
+    }
+}
+/* इमेज के ऊपर आने वाले टेक्स्ट को गायब करने के लिए */
+.deal-item p, .deal-item span, .deal-item .overlay {
+    display: none !important; /* अगर आप इसे हटाना चाहते हैं */
+}
+
+/* अगर आप टेक्स्ट दिखाना चाहते हैं, तो उसे गोले के नीचे भेजें */
+.deal-item {
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important; /* टेक्स्ट को नीचे लाने के लिए */
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: white !important;
+}
+/* मोबाइल डिवाइसेस के लिए (768px से कम स्क्रीन) */
+@media (max-width: 768px) {
+    .parallax-section {
+        height: 300px; 
+        background-attachment: scroll !important; 
+        background-size: cover; 
+        background-position: center; 
+    }
+
+    .parallax-content {
+        width: 90%; /* कंटेंट को स्क्रीन के हिसाब से सेट किया */
+        padding: 20px;
+    }
+}

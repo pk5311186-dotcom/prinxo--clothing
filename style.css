@@ -1,0 +1,1068 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f3f6;
+    font-family: Arial, sans-serif;
+}
+
+.main-product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.product-card {
+    background: white;
+    width: 220px;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.brand-name {
+    color: #878787;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.product-name {
+    font-size: 14px;
+    margin: 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.price-section {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.discount {
+    color: #388e3c;
+    font-size: 13px;
+}
+
+.buy-now-btn {
+    display: block;
+    background-color: #fb641b;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 2px;
+    margin-top: auto;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .product-card {
+        width: 46%;
+    }
+}
+
+.flipkart-footer {
+    background-color: #172337;
+    color: white;
+    padding: 30px 0;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+    flex: 1 1 150px;
+    min-width: 150px;
+    text-align: left; 
+}
+
+
+@media (max-width: 600px) {
+    .footer-content {
+        justify-content: space-between; 
+        padding: 0 20px;
+    }
+    
+    .footer-section {
+        flex: 1 1 45%; 
+        text-align: left;
+    }
+    
+    .developer-info {
+        flex: 1 1 100%;
+        border-left: none;
+        padding-left: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+.footer-section h3 {
+    color: #878787;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.footer-section p {
+    font-size: 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.dev-name {
+    font-size: 18px !important;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.dev-role {
+    font-size: 14px;
+    color: #878787;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 15px;
+    margin-top: 20px;
+    border-top: 1px solid #454d5e;
+    font-size: 12px;
+    color: #dbdbdb;
+}
+@media (max-width: 600px) {
+    
+    .navbar {
+        display: flex !important;
+        flex-direction: column !important; 
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 10px 0 !important;
+        height: auto !important;
+        min-height: 80px !important;
+    }
+
+    .logo {
+        font-size: 18px !important; 
+        margin: 0 0 8px 0 !important; 
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .navbar a {
+        display: inline-block !important;
+        font-size: 12px !important; 
+        padding: 5px 12px !important; 
+        border: 1px solid white !important;
+        border-radius: 4px !important;
+        width: fit-content !important; 
+        text-decoration: none !important;
+    }
+}
+
+.product-card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+    transition: all 0.3s ease; 
+    cursor: pointer; 
+}
+
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.buy-now-btn:hover {
+    background-color: #e65100 !important; 
+    letter-spacing: 1px; 
+    transition: 0.2s;
+}
+
+
+.buy-now-btn:active {
+    background-color: #2e7d32 !important;
+    transform: scale(0.95); 
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
+}
+/* Full Header Styling */
+.main-header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #2874f0; 
+    color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.about-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px solid white;
+    padding: 5px 12px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.about-link:hover {
+    background: white;
+    color: #2874f0;
+}
+
+/* Category Nav Styling */
+.category-nav {
+    background-color: #f1f3f6; /* Flipkart jaisa light gray background */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    
+    /* Yeh teen lines zaroori hain sticky karne ke liye */
+    position: sticky; 
+    top: 85px; /* Header ke thik niche chipak jayega (Header ki height ke hisab se ise badal sakte hain) */
+    z-index: 999; /* Taaki kapde iske niche se jayein, upar se nahi */
+    
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Scroll karte waqt thodi shadow dikhegi */
+}
+.cat-item {
+    cursor: pointer;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+}
+
+.cat-item {
+    cursor: pointer;
+    font-weight: 500;
+    padding: 5px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.cat-item:hover, .cat-item.active {
+    background-color: #2874f0;
+    color: white;
+}
+/* Moving Banner */
+.offer-banner {
+    background: #fb641b;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 8px 0;
+    font-size: 12px;
+}
+
+.scroll-text {
+    display: inline-block;
+    animation: scroll-text-anim 25s linear infinite;
+}
+
+@keyframes scroll-text-anim {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+/* Electronics Card Special Styling */
+.elec-card {
+    border: 1px solid #e0e0e0;
+    transition: 0.3s ease-in-out;
+}
+
+.elec-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    border-color: #2874f0;
+}
+
+.elec-badge {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background: #ff477e;
+    color: white;
+    padding: 4px 10px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 0 15px 15px 0;
+    z-index: 1;
+}
+
+.brand {
+    font-size: 12px;
+    color: #878787;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.product-title {
+    font-size: 14px;
+    color: #212121;
+    height: 38px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.specs {
+    font-size: 11px;
+    color: #388e3c;
+    background: #f6fff6;
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #878787;
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.discount {
+    color: #388e3c;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.electronics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 15px;
+    background-color: #f1f3f6;
+}
+
+
+.elec-card {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.elec-card:hover {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    border-color: #2874f0;
+}
+
+
+.img-container {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.elec-info {
+    padding: 12px;
+    flex-grow: 1;
+}
+
+.brand { font-size: 11px; color: #878787; font-weight: bold; margin: 0; }
+.title { font-size: 13px; color: #212121; margin: 5px 0; height: 35px; overflow: hidden; }
+.specs { font-size: 11px; color: #388e3c; margin-bottom: 8px; font-weight: 500; }
+.price { font-size: 15px; font-weight: bold; }
+.old { font-size: 12px; color: #878787; text-decoration: line-through; }
+
+
+.buy-btn {
+    text-align: center;
+    background: #fb641b;
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+}
+
+
+.elec-badge {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: #ff477e;
+    color: white;
+    font-size: 9px;
+    padding: 2px 6px;
+    font-weight: bold;
+    border-radius: 3px;
+    z-index: 10;
+}
+
+
+@media (max-width: 480px) {
+    .electronics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+}
+.gift-card {
+    border: 2px solid #ffebee; 
+}
+
+.gift-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff477e;
+    color: white;
+    padding: 3px 8px;
+    font-size: 11px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.ad-container {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    color: white;
+    text-align: center;
+    border: 1px solid #4ecca3;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.premium-badge {
+    background: #4ecca3;
+    color: #1a1a2e;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.prime-header h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.prime-logo {
+    width: 60px;
+    filter: brightness(1.5);
+}
+
+.prime-highlights {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.discount-tag {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.brand-icons {
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+.price-box {
+    margin: 15px 0;
+}
+
+.main-price {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.savings-text {
+    color: #4ecca3;
+    font-size: 14px;
+}
+
+.prime-btn {
+    display: block;
+    background: #4ecca3;
+    color: #1a1a2e;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.prime-btn:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+/* फोन के लिए सही सेटिंग (Media Query) */
+@media screen and (max-width: 600px) {
+    .main-product-grid { 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 10px; /* कार्ड्स के बीच की दूरी कम करें */
+    }
+    .product-card {
+        width: 45%; /* एक लाइन में दो कार्ड्स दिखाने के लिए */
+        margin: 5px 0;
+    }
+}
+.product-description {
+  font-size: 13px;
+  color: #666;
+  margin: 6px 0;
+  height: 32px;
+  overflow: hidden;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-logo {
+    height: 50px; /* Logo ki height yahan se adjust karein */
+    width: auto;
+}
+
+.search-container {
+    display: flex;
+    flex: 0 1 500px;
+    margin: 0 20px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #000;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+#searchBtn {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+.cart-modal {
+    display: none; position: fixed; z-index: 2000; left: 0; top: 0;
+    width: 100%; height: 100%; background-color: rgba(0,0,0,0.7);
+}
+.cart-modal-content {
+    background: white; margin: 10% auto; padding: 20px;
+    width: 90%; max-width: 450px; border-radius: 10px; position: relative;
+}
+.close-btn { position: absolute; right: 20px; top: 10px; font-size: 25px; cursor: pointer; }
+
+/* Ek item ka look */
+.cart-item {
+    display: flex; align-items: center; border-bottom: 1px solid #ddd; padding: 10px 0;
+}
+.cart-item img {
+    width: 60px; height: 75px; object-fit: cover; border-radius: 4px; margin-right: 15px;
+}
+.cart-item-info p { margin: 2px 0; font-size: 14px; font-weight: bold; }
+/* Buttons ko ek saath lane ke liye */
+.card-details {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+/* --- Premium Button Group Container --- */
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* डेस्कटॉप पर दो कॉलम */
+    gap: 8px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* --- Common Button Styling --- */
+.add-to-cart-btn, .buy-now-btn {
+    border: none;
+    padding: 10px 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Add to Cart - Premium Orange Look */
+.add-to-cart-btn {
+    background-color: #ff9f00;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Buy Now - Slightly Darker Tone */
+.buy-now-btn {
+    background-color: #fb641b;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Hover Effects */
+.add-to-cart-btn:hover, .buy-now-btn:hover {
+    filter: brightness(0.9);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* --- Mobile Specific "Dagdha" Fix --- */
+@media (max-width: 480px) {
+    .button-group {
+        grid-template-columns: 1fr; /* मोबाइल पर बटन एक के नीचे एक आ जाएंगे */
+        gap: 6px;
+    }
+
+    .add-to-cart-btn, .buy-now-btn {
+        font-size: 11px; /* छोटे स्क्रीन के लिए फोंट एडजस्टमेंट */
+        padding: 12px 5px;
+        letter-spacing: 0.5px;
+    }
+    
+    /* अगर आप चाहते हैं कि बटन एक ही लाइन में रहें, तो इसे इस्तेमाल करें:
+    .button-group {
+        grid-template-columns: 1.2fr 0.8fr; 
+    }
+    */
+}
+
+/* Buy Now Button Style */
+.buy-now-btn {
+    flex: 1;
+    background-color: #fb641b; /* Darker Orange/Red */
+    color: white;
+    text-decoration: none;
+    padding: 12px 5px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.buy-now-btn:hover {
+    background-color: #e65a16;
+    transform: translateY(-2px);
+}
+.cart-modal-content {
+    background: white;
+    margin: 5% auto; /* Upar se thoda kam gap */
+    padding: 20px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 10px;
+    position: relative;
+    
+    /* Scroll fix ke liye ye do lines zaroori hain */
+    max-height: 80vh; /* Screen ki 80% height lega */
+    overflow-y: auto; /* Jyada item hone par scroll bar aa jayega */
+}
+/* Purana header style hata kar ye daalein */
+.main-header {
+    background-color: #fff; /* White background */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed; /* Header humesha top par rahega */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Badi screen par professional look ke liye */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+category-nav
+/* Logo Section Style */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo-img {
+    height: 60px; /* Logo ka size, isse bada mat karna */
+    width: auto;
+    border-radius: 50%; /* Circle shape ke liye */
+}
+
+.brand-names {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Poppins', sans-serif; /* Modern font use karna */
+}
+
+/* Search Bar Style */
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ddd;
+    border-radius: 25px; /* Round shapes are better */
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.search-container:focus-within {
+    border-color: #2874f0; /* Focussed state */
+    box-shadow: 0 0 10px rgba(40,116,240,0.3);
+}
+
+#search-input {
+    flex-grow: 1;
+    border: none;
+    padding:0 10px;
+    font-size: 14px;
+    background: transparent;
+}
+
+#search-input:focus {
+    outline: none;
+}
+
+#search-btn {
+    background: #2874f0; /* Flipkart Blue */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+#search-btn:hover {
+    background: #1259cc;
+}
+
+/* Right Links Style */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #2874f0; /* Hover effect */
+}
+
+/* Body Padding (Header fix karne ki wajah se top items hide ho jayenge) */
+body {
+    padding-top: 100px; /* Header height ke barabar gap */
+}
+@media screen and (max-width: 480px) {
+    अबाउट अस और लोगो को ऊपर-नीचे सेट करना
+    .header-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        /* height: auto !important; */
+    }
+@media screen and (max-width: 480px) {
+    /* 1. हेडर को अपनी जगह फिक्स रखें */
+    header {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        z-index: 100 !important;
+    }
+
+    /* 2. सर्च बार को थोड़ा नीचे करें ताकि वो लोगो से न टकराए */
+    .search-container {
+        margin: 10px auto !important;
+        width: 90% !important;
+    }
+
+    /* 3. About Us और Cart वाली पट्टी को साफ़ दिखाएँ */
+    .nav-links, .top-nav {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        margin-top: 5px !important;
+        background: #fff !important;
+        position: relative !important;
+        top: 0 !important; /* अगर ये ऊपर भाग रहा है तो उसे वापस लाएगा */
+    }
+
+    /* 4. कैटेगरी वाली पट्टी (Fashion, Electronics) को इसके नीचे जगह दें */
+    .category-nav {
+        display: flex !important;
+        margin-top: 15px !important; /* ऊपर वाली चीजों से दूरी बनाने के लिए */
+        padding: 10px 0 !important;
+        border-top: 1px solid #eee !important;
+        overflow-x: auto !important;
+    }
+}
+@media screen and (max-width: 480px) {
+    /* 1. पूरी बॉडी के ऊपर का फालतू गैप हटाएँ */
+    body {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    /* 2. हेडर के ऊपर की खाली जगह कम करें */
+    header {
+        padding-top: 5px !important; /* इसे अपनी जरूरत के हिसाब से 0 भी कर सकते हैं */
+        margin-top: 0 !important;
+        min-height: auto !important; /* अगर कोई फिक्स हाइट है तो उसे हटा देगा */
+    }
+
+    /* 3. लोगो के ऊपर का मार्जिन कम करें */
+    .logo-container, .header-top {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+    /* सर्च बार का साइज फिक्स - न ज्यादा बड़ा न छोटा */
+    .search-container {
+        width: 280px !important; 
+        height: 36px !important;
+        margin: 10px auto !important;
+        display: flex !important;
+        border: 1px solid #ff9800 !important;
+    }
+
+    #search-input {
+        font-size: 11px !important; /* छोटा टेक्स्ट ताकि प्लेसहोल्डर फिट रहे */
+        padding: 0 10px !important;
+        height: 100% !important;
+    }
+
+    /* प्लेसहोल्डर का साइज छोटा */
+    #search-input::placeholder {
+        font-size: 10px !important;
+    }
+
+    #search-btn {
+        width: 55px !important;
+        font-size: 10px !important;
+        padding: 0 !important;
+    }
+}
+@media screen and (max-width: 480px) {
+    /* 1. लोगो को छोटा करने के लिए */
+    .brand-logo-img {
+        height: 35px !important; /* 60px से घटाकर 35px किया */
+        width: auto !important;
+    }
+
+    .brand-names {
+        font-size: 20px !important; /* priXo टेक्स्ट को छोटा किया */
+    }
+
+    /* 2. हेडर कंटेनर की हाइट फिक्स */
+    .header-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        height: 120px !important; /* ऑटो हटाकर फिक्स हाइट दी */
+        padding: 5px 0 !important;
+        justify-content: center !important;
+    }
+
+    /* 3. सर्च बार (जैसा आपने सेट किया है, बस थोड़ा मार्जिन कम) */
+    .search-container {
+        width: 260px !important;
+        height: 34px !important;
+        margin: 5px auto !important; /* मार्जिन कम किया ताकि जगह बचे */
+        display: flex !important;
+    }
+
+    /* 4. लिंक्स को और छोटा और सेट करना */
+    .nav-links {
+        display: flex !important;
+        gap: 15px !important;
+        margin-top: 5px !important;
+    }
+
+    .nav-links a {
+        font-size: 11px !important;
+    }
+}
+@media screen and (max-width: 480px) {
+    .electronics-grid {
+        display: grid !important;
+        /* यहाँ 1fr 1fr करने से एक लाइन में 2 कार्ड आएंगे */
+        grid-template-columns: 1fr 1fr !important; 
+        gap: 8px !important;
+        padding: 5px !important;
+    }
+
+    .elec-card {
+        width: 100% !important;
+        padding: 8px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+    }
+
+    /* इमेज का साइज छोटा करना ताकि 2 कार्ड में फिट हो सके */
+    .img-container img {
+        height: 120px !important; 
+        object-fit: contain !important;
+    }
+
+    /* मोबाइल पर टेक्स्ट का साइज छोटा करना */
+    .product-name {
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        height: 30px !important; /* नाम ज्यादा लंबा हो तो भी लेआउट न बिगड़े */
+        overflow: hidden !important;
+    }
+
+    .price {
+        font-size: 13px !important;
+    }
+
+    /* बटनों को छोटा और एक साथ रखना */
+    .cart-btn, .buy-btn.flipkart {
+        font-size: 11px !important;
+        padding: 6px 2px !important;
+        margin-top: 4px !important;
+    }
+}
+/* पेज लोड होते समय का एनीमेशन */
+body {
+    animation: fadeInPage 0.8s ease-in-out;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* पेज नीचे से ऊपर आएगा */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* बटन क्लिक पर एक छोटा सा "Ripple" या Scale इफेक्ट */
+.nav-link:active {
+    transform: scale(0.95);
+    transition: 0.2s;
+}
+#loader-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: #ff9f00; /* आपकी ब्रांड थीम */
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.4s ease;
+}
