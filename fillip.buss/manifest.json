@@ -1,0 +1,20 @@
+{
+  "name": "prinXo zeXine Official Store",
+  "short_name": "prinXo",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a1a1a",
+ "icons": [
+    {
+      "src": "https://i.postimg.cc/mrJfXpkn/Whats-App-Image-2026-04-29-at-3-58-45-PM.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://i.postimg.cc/mrJfXpkn/Whats-App-Image-2026-04-29-at-3-58-45-PM.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+]
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://budgt-friendly-clothes.netlify.app/sitemap.xml
